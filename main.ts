@@ -1,17 +1,25 @@
+interface Task {
+  id: number;
+  text: string;
+  completed: boolean;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
-  const todoInput = document.getElementById("todo-input");
-  const addTaskBtn = document.getElementById("add-task-btn");
-  const todoList = document.getElementById("todo-list");
+  const todoInput = document.getElementById("todo-input") as HTMLInputElement;
+  const addTaskBtn = document.getElementById(
+    "add-task-btn"
+  ) as HTMLButtonElement;
+  const todoList = document.getElementById("todo-list") as HTMLUListElement;
 
-  let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  let tasks: Task[] = JSON.parse(localStorage.getItem("tasks") || "[]");
 
-  tasks.forEach((task) => renderTask(task));
+  tasks.forEach((task: Task) => renderTask(task));
 
   addTaskBtn.addEventListener("click", () => {
     const taskText = todoInput.value.trim();
     if (taskText === "") return;
 
-    const newTask = {
+    const newTask: Task = {
       id: Date.now(),
       text: taskText,
       completed: false,
@@ -23,9 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
     todoInput.value = "";
   });
 
-  function renderTask(task) {
+  function renderTask(task: Task): void {
     const li = document.createElement("li");
-    li.setAttribute("data-id", task.id);
+    li.setAttribute("data-id", task.id.toString());
     if (task.completed) li.classList.add("completed");
 
     const span = document.createElement("span");
@@ -52,7 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
     li.appendChild(actionsDiv);
     todoList.appendChild(li);
   }
-  function editTask(task, li) {
+
+  function editTask(task: Task, li: HTMLLIElement): void {
     li.innerHTML = "";
 
     const input = document.createElement("input");
@@ -73,17 +82,19 @@ document.addEventListener("DOMContentLoaded", () => {
       li.innerHTML = "";
       renderTask(task);
     });
+
     li.appendChild(input);
     li.appendChild(saveBtn);
   }
-  function deleteTask(id) {
+
+  function deleteTask(id: number): void {
     tasks = tasks.filter((task) => task.id !== id);
     saveTasks();
     const li = document.querySelector(`li[data-id='${id}']`);
     if (li) li.remove();
   }
 
-  function toggleComplete(id) {
+  function toggleComplete(id: number): void {
     const task = tasks.find((t) => t.id === id);
     if (!task) return;
     task.completed = !task.completed;
@@ -93,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (li) li.classList.toggle("completed");
   }
 
-  function saveTasks() {
+  function saveTasks(): void {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }
 });
