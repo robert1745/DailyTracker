@@ -231,6 +231,15 @@ h1 {
     color: white;
     box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
 }
+.edit-input {
+  flex-grow: 1;
+  padding: 10px 12px;
+  font-size: 1.05em;
+  border: 1px black #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
 
 @media (max-width: 600px) {
     .todo-app-container {
