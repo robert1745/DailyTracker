@@ -19,14 +19,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tasks.push(newTask);
     saveTasks()
+    renderTasks(newTask)
     todoInput.value = " ";
     console.log(tasks);
   });
 
    function renderTasks(task){
-    console.log(task)
+    const li = document.createElement('li');
+    li.setAttribute("data-id",task.id)
+
+    if(task.completed) {
+        li.classList.add('Completed')
+    }
+    li.innerHTML = `
+      <span>${task.text}</span>
+      <button class="delete-btn">Delete</button>
+    `;
+    li.querySelector('.delete-btn').addEventListener('click',()=>{
+        deleteTask(task.id)
+    })
+
+    todoList.appendChild(li);
    }
    function saveTasks(){
     localStorage.setItem("tasks",JSON.stringify(tasks));
+   }
+
+   function deleteTask(id){
+    tasks = tasks.filter(task=>task.id!=id)
+    saveTasks()
+    document.querySelector(`li[data-id='${id}']`).remove();
    }
 });

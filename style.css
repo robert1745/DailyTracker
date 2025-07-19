@@ -1,7 +1,6 @@
-/* General Body Styles - Sleek */
 body {
-    font-family: 'Inter', sans-serif; /* Modern font choice */
-    background: linear-gradient(135deg, #f0f2f5 0%, #e0e5ec 100%); /* Soft, light gradient */
+    font-family: 'Inter', sans-serif; 
+    background: linear-gradient(135deg, #f0f2f5 0%, #e0e5ec 100%); 
     color: #333;
     display: flex;
     justify-content: center;
@@ -10,17 +9,16 @@ body {
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
-    overflow: hidden; /* Prevent scrollbar from background effects */
+    overflow: hidden; 
 }
 
-/* Optional: Add some subtle background elements for visual interest */
 body::before,
 body::after {
     content: '';
     position: absolute;
     width: 200px;
     height: 200px;
-    background-color: rgba(37, 117, 252, 0.1); /* Light blue */
+    background-color: rgba(37, 117, 252, 0.1); 
     border-radius: 50%;
     filter: blur(80px);
     z-index: -1;
@@ -36,7 +34,7 @@ body::after {
     bottom: 10%;
     right: 10%;
     animation: float2 10s infinite ease-in-out reverse;
-    background-color: rgba(106, 17, 203, 0.1); /* Light purple */
+    background-color: rgba(106, 17, 203, 0.1); 
 }
 
 @keyframes float1 {
@@ -52,18 +50,17 @@ body::after {
 }
 
 
-/* To-Do App Container - Sleek */
 .todo-app-container {
     background-color: #ffffff;
     padding: 35px;
-    border-radius: 16px; /* More pronounced rounded corners */
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); /* Deeper, softer shadow */
+    border-radius: 16px; 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); 
     width: 100%;
-    max-width: 550px; /* Slightly wider */
+    max-width: 550px; 
     text-align: center;
     animation: slideInUp 0.8s ease-out;
     position: relative;
-    z-index: 10; /* Ensure it's above background effects */
+    z-index: 10; 
 }
 
 @keyframes slideInUp {
@@ -77,33 +74,31 @@ body::after {
     }
 }
 
-/* Heading - Sleek */
 h1 {
-    color: #4a4a4a; /* Darker, sophisticated grey */
+    color: #4a4a4a; 
     margin-bottom: 30px;
-    font-size: 2.5em; /* Larger heading */
+    font-size: 2.5em; 
     font-weight: 700;
-    letter-spacing: -0.02em; /* Tighter letter spacing */
+    letter-spacing: -0.02em; 
     position: relative;
     display: inline-block;
 }
 
-/* Input Container - Sleek */
 .input-container {
     display: flex;
     margin-bottom: 30px;
-    gap: 15px; /* More space */
+    gap: 15px; 
 }
 
 #todo-input {
     flex-grow: 1;
-    padding: 14px 20px; /* More padding */
-    border: 1px solid #e0e0e0; /* Lighter border */
-    border-radius: 10px; /* More rounded */
+    padding: 14px 20px; 
+    border: 1px solid #e0e0e0; 
+    border-radius: 10px; 
     font-size: 1.1em;
     outline: none;
     transition: all 0.3s ease;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Subtle inner shadow */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); 
 }
 
 #todo-input::placeholder {
@@ -111,13 +106,13 @@ h1 {
 }
 
 #todo-input:focus {
-    border-color: #007bff; /* Primary blue focus */
-    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1); /* Soft glowing effect */
-    background-color: #f8faff; /* Very light blue background on focus */
+    border-color: #007bff; 
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.1); 
+    background-color: #f8faff; 
 }
 
 #add-task-btn {
-    background: linear-gradient(45deg, #007bff, #0056b3); /* Blue gradient */
+    background: linear-gradient(45deg, #007bff, #0056b3); 
     color: white;
     border: none;
     padding: 14px 25px;
@@ -126,14 +121,14 @@ h1 {
     font-size: 1.1em;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Soft shadow */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); 
     letter-spacing: 0.02em;
 }
 
 #add-task-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
-    background: linear-gradient(45deg, #0056b3, #007bff); /* Invert gradient on hover */
+    background: linear-gradient(45deg, #0056b3, #007bff); 
 }
 
 #add-task-btn:active {
@@ -141,7 +136,6 @@ h1 {
     box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
 }
 
-/* To-Do List - Sleek */
 #todo-list {
     list-style: none;
     padding: 0;
@@ -153,22 +147,22 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px; /* More padding */
+    padding: 15px 20px; 
     margin-bottom: 12px;
     border-radius: 10px;
-    border: 1px solid #ebebeb; /* Lighter border */
-    font-size: 1.15em; /* Slightly larger text */
+    border: 1px solid #ebebeb;
+    font-size: 1.15em; 
     color: #4a4a4a;
     transition: all 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for list items */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); 
     word-break: break-word;
-    position: relative; /* For completion checkmark */
+    position: relative; 
 }
 
 #todo-list li:hover {
-    transform: translateY(-2px); /* Slight lift on hover */
+    transform: translateY(-2px); 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    background-color: #f8faff; /* Light blue tint on hover */
+    background-color: #f8faff; 
 }
 
 #todo-list li.completed {
@@ -177,18 +171,18 @@ h1 {
     background-color: #f0f0f0;
     border-color: #e0e0e0;
     opacity: 0.8;
-    transform: none; /* No lift for completed items */
+    transform: none;
     box-shadow: none;
     font-style: italic;
 }
 
 #todo-list li.completed::after {
-    content: '\2713'; /* Checkmark icon */
-    font-family: 'Font Awesome 5 Free'; /* Using Font Awesome for the checkmark */
+    content: '\2713'; 
+    font-family: 'Font Awesome 5 Free'; 
     font-weight: 900;
     position: absolute;
     right: 15px;
-    color: #28a745; /* Green checkmark */
+    color: #28a745;
     font-size: 1.2em;
     top: 50%;
     transform: translateY(-50%);
@@ -199,28 +193,27 @@ h1 {
     flex-grow: 1;
     text-align: left;
     cursor: pointer;
-    padding-right: 10px; /* Space for actions */
+    padding-right: 10px; 
 }
 
-/* Action Buttons (Edit, Delete) - Sleek */
 .actions {
     display: flex;
-    gap: 10px; /* More space between buttons */
+    gap: 10px; 
 }
 
 .actions button {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.2em; /* Slightly larger icons */
+    font-size: 1.2em; 
     padding: 8px;
-    border-radius: 8px; /* More rounded buttons */
+    border-radius: 8px; 
     transition: all 0.3s ease;
-    color: #888; /* Default icon color */
+    color: #888; 
 }
 
 .actions button.edit-btn {
-    color: #007bff; /* Primary blue for edit */
+    color: #007bff; 
 }
 
 .actions button.edit-btn:hover {
@@ -230,7 +223,7 @@ h1 {
 }
 
 .actions button.delete-btn {
-    color: #dc3545; /* Red for delete */
+    color: #dc3545; 
 }
 
 .actions button.delete-btn:hover {
@@ -239,7 +232,6 @@ h1 {
     box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
 }
 
-/* Responsive Design - Sleek */
 @media (max-width: 600px) {
     .todo-app-container {
         padding: 25px;
@@ -277,6 +269,6 @@ h1 {
     }
 
     #todo-list li.completed::after {
-        right: 10px; /* Adjust checkmark position on small screens */
+        right: 10px; 
     }
 }
